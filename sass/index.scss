@@ -1,0 +1,249 @@
+@import 'base/fonticons.scss';
+$colorSoftRed: hsl(0, 94%, 66%);
+$colorSoftBlue:hsl(231, 69%, 60%);
+$colorGrayishBlue: hsl(229, 8%, 60%);
+$colorTranporteBlue:#003577;
+$colorTranporteBlueDark:hsla(215,97%,14%, 0.5);
+$colorTranporteOrange:#f1942d;
+$colorTranporteOrangeLight:hsla(32, 87%, 56%, 0.3);
+$transparent: transparent;
+$letterSpace: 2px;
+
+$marginTransporteX: 35px;
+$dimensionHeaderY: 250px;
+$paddingSocialY: 40px;
+
+
+@mixin createButton($bgColor, $txtColor ,$borderColor ,$width , $height) {
+        background-color: $bgColor;
+        height: $height;
+        width: $width;
+        border: 2px solid $borderColor;
+        border-radius: 7px;
+        color:$txtColor;
+        font-family: 'Rubik', sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: uppercase;
+        //letter-spacing: $letterSpace;
+}
+@mixin  getSocial () {
+        display: flex;
+        justify-content: center;
+        & >* {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+        .social__twitter {
+            padding-top: 4px;
+        }
+}
+@mixin  getMenu () {
+    flex: 1;
+    text-align: right;
+    #toggle {
+        display: none;
+    }
+}
+@mixin getNav($borderColor) {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    & > * {
+        letter-spacing: $letterSpace;
+        text-transform: uppercase;
+        border-top: 1px solid $borderColor;
+        &:last-child {
+           border-bottom: 1px solid $borderColor; 
+        }
+    }
+}
+/** border-box trick **/
+html {
+    box-sizing: border-box;
+}
+  *, ::before, ::after {
+    box-sizing: inherit;
+}
+
+/** Generel **/
+body {
+    height: 100vh; 
+    margin: 0;
+    width: 100vw;
+}
+.transporte{
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    &__header {
+        position: relative;
+        height: $dimensionHeaderY;
+        background-color: $colorTranporteBlue;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .header__menu{
+            background-color: $colorTranporteBlueDark;
+            color: $colorTranporteOrange;
+            font-size: 12px;
+            height: 40px;
+            .menu__contact {
+                display: flex;
+                margin: 10px 5px 5px 10px;
+                & > * {
+                    margin: auto 10px auto 4px;
+                    color: whitesmoke;
+                }
+                .transporte__icon {
+                    margin: auto 0;
+                    color: $colorTranporteOrange;
+
+                }
+            }
+            .menu__toggle {
+                position: absolute;
+                top:10px;
+                left: 90%;
+                #toggle {
+                    display: none;
+                }
+            }
+        }
+        .header__logo {
+            background-image: url('../images/stampfli_logo_01_375x190.jpg');
+            background-repeat: no-repeat;
+            height: 100%;
+        }
+        .header__request{
+            position: absolute;
+            top:180px;
+            left: 18px;
+            @include createButton($colorTranporteOrangeLight, $colorTranporteOrange ,$colorTranporteOrange,auto, 50px);
+        }
+    }
+
+    &__navbar {
+        display: none;
+    }
+    &__content {
+        margin: 0 $marginTransporteX ;
+        color: $colorTranporteBlue;
+        .region {
+            height: 300px;
+            margin: 50px 0;
+            background-image: url('../images/europa.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            .countries {
+                margin-top: 50px;
+            }
+        }
+
+         //Slideshow 
+        .what{
+            margin:50px 0;
+            position: relative;
+            .title {
+                margin-bottom: 10px;
+            }
+        }
+        #slides {
+            position: relative;
+            height: 300px;
+            padding: 0px;
+            margin: 0px;
+            list-style-type: none;
+        }        
+        .slide {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            z-index: 1;
+            transition: opacity 1s;
+            & img {
+                width: 100%;
+            }
+        }
+        .showing {
+            opacity: 1;
+            z-index: 2;
+        }
+        .controls{
+            border: 0;
+            position: absolute;
+            background:transparent;
+            font-size: 20px;
+            cursor: pointer;
+            width: 30px;
+            padding:0;
+          }
+        #previous {
+            z-index: 3;
+            top: 80px;
+            left: 5%;
+            transform: rotate(90deg);
+        }  
+        #next {
+            z-index: 3;
+            top: 80px;
+            left: 85%;
+            transform: rotate(-90deg);
+        }  
+    }
+
+    &__footer{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: $colorTranporteBlue;
+        padding-top:35px;
+        padding-bottom: $paddingSocialY;
+        text-align: center;
+        color: $colorTranporteOrange;
+        .nav{
+            @include getNav(none);
+            font-size: 15px;
+            opacity: 80%;
+            margin: 23px 0 34px 0;
+
+        }
+        .social {
+            @include getSocial();
+        } 
+    }
+   
+}
+
+@media screen and  (min-device-width:376px) and (orientation : landscape){
+    .transporte{
+        &__header{
+            background: url('../images/stampfli_logo_01_812x412.jpg'); 
+            background-position-y: -60px;
+        }
+        .contact__time {
+            display: flex;
+        }
+    
+    }
+    .transporte__content {
+        display: flex;
+        justify-content: space-evenly;
+        & > * {
+            flex:2;
+        }
+    }
+    .transporte__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+

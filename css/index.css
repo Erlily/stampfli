@@ -1,0 +1,199 @@
+@font-face {
+  font-family: 'transporte';
+  src: url("fonts/transporte.eot?d6aarx");
+  src: url("fonts/transporte.eot?d6aarx#iefix") format("embedded-opentype"), url("../fonts/transporte.ttf?d6aarx") format("truetype"), url("../fonts/transporte.woff?d6aarx") format("woff"), url("../fonts/transporte.svg?d6aarx#transporte") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block; }
+.transporte__icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'transporte' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.transporte-phone:before {
+  content: "\e942"; }
+
+.transporte-envelop:before {
+  content: "\e945"; }
+
+.transporte-alarm:before {
+  content: "\e950"; }
+
+/** border-box trick **/
+html {
+  box-sizing: border-box; }
+
+*, ::before, ::after {
+  box-sizing: inherit; }
+
+/** Generel **/
+body {
+  height: 100vh;
+  margin: 0;
+  width: 100vw; }
+
+.transporte {
+  font-family: 'Rubik', sans-serif;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; }
+  .transporte__header {
+    position: relative;
+    height: 250px;
+    background-color: #003577;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
+    .transporte__header .header__menu {
+      background-color: rgba(1, 30, 70, 0.5);
+      color: #f1942d;
+      font-size: 12px;
+      height: 40px; }
+      .transporte__header .header__menu .menu__contact {
+        display: flex;
+        margin: 10px 5px 5px 10px; }
+        .transporte__header .header__menu .menu__contact > * {
+          margin: auto 10px auto 4px;
+          color: whitesmoke; }
+        .transporte__header .header__menu .menu__contact .transporte__icon {
+          margin: auto 0;
+          color: #f1942d; }
+      .transporte__header .header__menu .menu__toggle {
+        position: absolute;
+        top: 10px;
+        left: 90%; }
+        .transporte__header .header__menu .menu__toggle #toggle {
+          display: none; }
+    .transporte__header .header__logo {
+      background-image: url("../images/stampfli_logo_01_375x190.jpg");
+      background-repeat: no-repeat;
+      height: 100%; }
+    .transporte__header .header__request {
+      position: absolute;
+      top: 180px;
+      left: 18px;
+      background-color: rgba(240, 149, 45, 0.3);
+      height: 50px;
+      width: auto;
+      border: 2px solid #f1942d;
+      border-radius: 7px;
+      color: #f1942d;
+      font-family: 'Rubik', sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      text-transform: uppercase; }
+  .transporte__navbar {
+    display: none; }
+  .transporte__content {
+    margin: 0 35px;
+    color: #003577; }
+    .transporte__content .region {
+      height: 300px;
+      margin: 50px 0;
+      background-image: url("../images/europa.png");
+      background-size: cover;
+      background-repeat: no-repeat; }
+      .transporte__content .region .countries {
+        margin-top: 50px; }
+    .transporte__content .what {
+      margin: 50px 0;
+      position: relative; }
+      .transporte__content .what .title {
+        margin-bottom: 10px; }
+    .transporte__content #slides {
+      position: relative;
+      height: 300px;
+      padding: 0px;
+      margin: 0px;
+      list-style-type: none; }
+    .transporte__content .slide {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      z-index: 1;
+      transition: opacity 1s; }
+      .transporte__content .slide img {
+        width: 100%; }
+    .transporte__content .showing {
+      opacity: 1;
+      z-index: 2; }
+    .transporte__content .controls {
+      border: 0;
+      position: absolute;
+      background: transparent;
+      font-size: 20px;
+      cursor: pointer;
+      width: 30px;
+      padding: 0; }
+    .transporte__content #previous {
+      z-index: 3;
+      top: 80px;
+      left: 5%;
+      transform: rotate(90deg); }
+    .transporte__content #next {
+      z-index: 3;
+      top: 80px;
+      left: 85%;
+      transform: rotate(-90deg); }
+  .transporte__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #003577;
+    padding-top: 35px;
+    padding-bottom: 40px;
+    text-align: center;
+    color: #f1942d; }
+    .transporte__footer .nav {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 15px;
+      opacity: 80%;
+      margin: 23px 0 34px 0; }
+      .transporte__footer .nav > * {
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        border-top: 1px solid none; }
+        .transporte__footer .nav > *:last-child {
+          border-bottom: 1px solid none; }
+    .transporte__footer .social {
+      display: flex;
+      justify-content: center; }
+      .transporte__footer .social > * {
+        padding-right: 20px;
+        padding-left: 20px; }
+      .transporte__footer .social .social__twitter {
+        padding-top: 4px; }
+
+@media screen and (min-device-width: 376px) and (orientation: landscape) {
+  .transporte__header {
+    background: url("../images/stampfli_logo_01_812x412.jpg");
+    background-position-y: -60px; }
+  .transporte .contact__time {
+    display: flex; }
+
+  .transporte__content {
+    display: flex;
+    justify-content: space-evenly; }
+    .transporte__content > * {
+      flex: 2; }
+
+  .transporte__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; } }
+
+/*# sourceMappingURL=index.css.map */

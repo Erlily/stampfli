@@ -4,11 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Stampfli</title>
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Stampfli Transporte</title>
+    <meta name="description" content=" Transportunternehmen aus der Ostschweiz (Rheintal):  zuverlässig, schnell und flexibel in den Regionen Schweiz, Deutschland, Italien, Österreich"/>
+    <script src="./js/index.js"></script>
 </head>
 <body>
-    <form action="index.php" method="GET">
-        <button style="background-color: lawngreen;">Call the Stampfli Web-Page</button>
-    </form>
+    <div class="wrapper">
+        <header  class="header">
+            <div class="header__short">
+                <div class="contact">
+                    <div class="fonticon fonticon-envelop"></div>
+                    <div> office@stampflitransporte.ch</div>
+                    <div class="fonticon fonticon-phone"></div>
+                    <div> +41 71 777 17 30</div>
+                </div>  
+                <label class="toggle" for="toggle">
+                    <input type="checkbox" id="toggle">
+                    <img class="img" src="./images/icon-hamburger.svg" alt="Menu Icon">
+                </label>
+            </div>
+            <div class="header__logo">
+            </div>
+            <div class="header__nav">
+                <ul class="nav">
+                    <li>
+                        <a href="#">
+                            <span class="fonticon fonticon-home"></span>
+                            <span >Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="fonticon fonticon-truck"></span>
+                        </a>
+                        <span >Dienstleistung</span>
+                    </li>
+                    <li>
+                    <a href="#">
+                            <span class="fonticon fonticon-earth"></span>
+                        </a>
+                        <span >Wohin</span>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <div class="content">
+            <main class="content__main">
+                <div class="what">
+                    <h2 class="title">Unsere Leistungen</h2>
+                    <ul id="slides">
+                        <li class="slide showing">
+                            <img src="./images/scania_01.jpg">
+                            <ul class=" charge ">
+                                <li>Stückgut</li>
+                                <li>Komplettladung</li>
+                                <li>Teilladung</li>
+                            </ul>
+                        </li>
+                        <li class="slide">
+                            <img src="./images/scania_02.jpg">
+                            <ul class="timing">
+                                <li>Expressfahrten</li>
+                                <li>Termintransport</li>
+                            </ul>
+                        </li>
+                        <li class="slide">
+                            <img src="./images/scania_03.jpg">
+                            <ul class="service">
+                                <li>Lagerung/Vermietung</li>
+                                <li>Verzollung und Beratung</li>
+                            </ul>
+                        </li>
+                    </ul> 
+                    <button class="controls" id="previous"><img src="./images/icon-arrow.svg"></button>
+                    <button class="controls" id="next"><img src="./images/icon-arrow.svg"></button>
+                </div>
+            </main>
+            <aside class="content__aside">
+                <div class="region">
+                    <h2 class="title">Wohin wir liefern </h2>
+                    <ul class="countries">
+                        <li>Schweiz</li>
+                        <li>Italien</li>
+                        <li>Österreich</li>
+                        <li>Deutschland</li>
+                    </ul>    
+                </div>
+            </aside>
+        </div>
+        <footer class="footer">
+            <div class="footer__nav">
+            </div><!--end .footer__nav-->
+            <div class="footer__short">
+                <div class="logo">
+                    <img src="./images/stampfli_logo_transparent.png" width="38px" height="38px" alt="Logo Icon">
+                </div>
+                <ul class="impressum">
+                    <li>Stampfli Transporte</li>
+                    <li>Moosstrasse 39</li>
+                    <li>CH-9445 Rebstein</li>
+                    <li>
+                        <span class="fonticon fonticon-phone"></span>
+                        <span> +41 71 777 17 30</span>
+                    </li>
+                    <li>
+                        <span class="fonticon fonticon-envelop"></span>
+                        <span> office@stampflitransporte.ch</span>
+                    </li>
+                </ul>
+                <div class="social">
+                    <div class="social__facebook">
+                        <img src="./images/icon-facebook.svg" alt="Facebook Icon">
+                    </div>
+                    <div class="social__twitter">
+                        <img src="./images/icon-twitter.svg" alt="Twitter Icon">
+                    </div>
+                </div>
+            </div><!--end .footer__short-->
+        </footer>
+    </div>
 </body>
 </html>

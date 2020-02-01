@@ -1,77 +1,436 @@
 @import 'base/fonticons.scss';
-$colorSoftRed: hsl(0, 94%, 66%);
-$colorSoftBlue:hsl(231, 69%, 60%);
-$colorGrayishBlue: hsl(229, 8%, 60%);
-$colorTranporteBlue:#003577;
+$colorTranporteBlue:hsl(213, 100%, 23%);
+$colorTranporteBlueLight:hsl(214, 71%, 30%);
 $colorTranporteBlueDark:hsla(215,97%,14%, 0.5);
 $colorTranporteOrange:#f1942d;
+$colorTranporteWhite: hsl(200, 7%, 84%);
 $colorTranporteOrangeLight:hsla(32, 87%, 56%, 0.3);
+$colorWhiteSmoke: whitesmoke;
 $transparent: transparent;
 $letterSpace: 2px;
-
-$marginTransporteX: 35px;
-$dimensionHeaderY: 250px;
-$paddingSocialY: 40px;
-
-
-@mixin createButton($bgColor, $txtColor ,$borderColor ,$width , $height) {
-        background-color: $bgColor;
-        height: $height;
-        width: $width;
-        border: 2px solid $borderColor;
-        border-radius: 7px;
-        color:$txtColor;
-        font-family: 'Rubik', sans-serif;
-        font-size: 18px;
-        font-weight: 500;
-        text-transform: uppercase;
-        //letter-spacing: $letterSpace;
-}
-@mixin  getSocial () {
-        display: flex;
-        justify-content: center;
-        & >* {
-            padding-right: 20px;
-            padding-left: 20px;
-        }
-        .social__twitter {
-            padding-top: 4px;
-        }
-}
-@mixin  getMenu () {
-    flex: 1;
-    text-align: right;
-    #toggle {
-        display: none;
-    }
-}
-@mixin getNav($borderColor) {
+$heightHeaderShort: 30px;
+$heightHeaderLogoLarge: 210px;
+$heightHeaderLogoMedium: 180px;
+$heightHeaderLogoSmall: 130px;
+@mixin getNav() {
     list-style: none;
     padding: 0;
     margin: 0;
-    & > * {
-        letter-spacing: $letterSpace;
-        text-transform: uppercase;
-        border-top: 1px solid $borderColor;
-        &:last-child {
-           border-bottom: 1px solid $borderColor; 
+}
+@mixin getFlex($direction, $justify, $align) {
+    display:flex;
+    flex-direction: $direction;
+    justify-content:  $justify;
+    align-items: $align;
+}
+@mixin getTextTransform() {
+    letter-spacing: $letterSpace;
+    text-transform: uppercase;
+}
+@mixin getLinkTransform() {
+    a {
+        text-decoration: none;
+        color: $colorTranporteBlueDark;
+        &:hover {
+            color: $colorTranporteBlue;
         }
     }
 }
+
+
 /** border-box trick **/
 html {
     box-sizing: border-box;
 }
-  *, ::before, ::after {
+*, ::before, ::after {
     box-sizing: inherit;
 }
 
 /** Generel **/
-body {
+html, body , .wrapper {
+    margin:0;
+    padding:0;
     height: 100vh; 
-    margin: 0;
-    width: 100vw;
+} 
+/*Wrapper*/
+.wrapper {
+    @include getFlex(column, space-between, none);
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
 }
+/*Header*/
+.header {
+    &__short{
+        background-color: $colorTranporteBlue;
+        color: $colorTranporteOrange;
+        font-size: 12px;
+        @include getFlex(row, space-between, none);
+        height: $heightHeaderShort;
+        .contact {
+            display: flex;
+            flex:2;
+            &  > * {
+                margin: auto 5px ;
+                color: $colorWhiteSmoke;
+            }
+            .fonticon {
+                color: $colorTranporteOrange;
+            }
+        }
+        .toggle {
+            width: 30px;
+            margin: auto auto;
+            #toggle {
+                display: none;
+            }
+        }
+    } 
+    &__logo {
+        background-image: url(../images/stampfli_logo_415x210_72dpi.jpg);
+        background-repeat: no-repeat;
+        height: $heightHeaderLogoLarge;
+        background-size: contain;
+        background-position-x: center;
+    }
+    &__nav {
+        display:none;
+        background-color:$colorTranporteWhite;
+        color: $colorTranporteBlueDark;
+        padding: 10px 0;
+        @include getTextTransform();
+        .nav {
+            @include getNav();
+            @include getLinkTransform();
+            @include getFlex(row,flex-end ,none );
+            & > * {
+                padding-right: 20px;
+                .fonticon {
+                    color: $colorTranporteOrange;
+                }
+            }
+        }
+    }
+}
+/* Content*/
+.content {
+    color: $colorTranporteBlue;
+    &__main{
+        margin-top: 20px;
+        height: 450px;
+        //Slideshow 
+        .what{
+            height: 100%;
+            position: relative;
+            .title , .charge, .timing, .service {
+                margin: 0 15px;
+            }
+            #slides {
+                position: relative;
+                height: 300px;
+                padding: 0px;
+                margin: 0px;
+                list-style-type: none;
+                .slide {
+                    position: absolute;
+                    left: 0px;
+                    top: 0px;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                    z-index: 1;
+                    transition: opacity 1s;
+                    & img {
+                        width: 100%;
+                    }      
+                }
+                .showing {
+                    opacity: 1;
+                    z-index: 2;
+                }
+            }        
+            .controls{
+                border: 0;
+                position: absolute;
+                background:transparent;
+                font-size: 20px;
+                cursor: pointer;
+                width: 30px;
+                padding:0;
+            }
+            #previous {
+                z-index: 3;
+                top: 80px;
+                left: 5%;
+                transform: rotate(90deg);
+            }  
+            #next {
+                z-index: 3;
+                top: 80px;
+                left: 85%;
+                transform: rotate(-90deg);
+            }    
+        }
+    }
+    &__aside{
+        height: 450px;
+        .region {
+            height: 100%;
+            //margin: 50px 0;
+            background-image: url('../images/europa.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position-x: -90px;
+            & > * {
+                margin: 0 15px;
+            }
+            .countries {
+                margin-top: 30px;
+            }
+        }
+    }
+    
+}
+/*Footer*/
+.footer{
+    //
+    background-color: $colorTranporteBlue;
+    padding-top:20px;
+    padding-bottom: 25px;
+    text-align: center;
+    color:$colorWhiteSmoke;
+    &__short{
+        .impressum{
+            @include getNav(); 
+            opacity: 80%;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            line-height: 25px;
+            .fonticon {
+                color: $colorTranporteOrange;
+            }
+        }
+        .social {
+            @include getFlex(row, center, none);
+            & > * {
+                padding-right: 20px;
+                padding-left: 20px;
+            }
+            &__twitter {
+                padding-top: 4px;
+            }
+        }
+    }
+} 
+@media screen and  (max-device-width:359px) {
+    .header {
+        &__short {
+            font-size: 11px;
+        }
+    }
+}
+
+@media screen and  (min-device-width:415px) {
+    .header {
+        &__short {
+            font-size: 16px;
+            .toggle {
+                display: none;
+            }
+        }
+        &__logo {
+            background-image: url(../images/stampfli_logo_897x598_96dpi.jpg);
+            background-position: -50px -75px ;
+            background-size: auto;
+            height:$heightHeaderLogoSmall;
+        }
+        &__nav {
+            display:block;
+        }
+    }
+    .content{
+        @include getFlex(row,space-between, none);
+        &__main{
+            margin-top:0;
+            width:55%;
+            .what {
+                flex:2;
+                .title {
+                    padding-top: 20px;
+                    padding-left: 25px;
+                }
+                .slide img {
+                    padding:30px 40px 0 40px;
+                }
+                #previous {
+                    top: 90px;
+                    left: 10%;
+                }
+                #next {
+                    top: 90px;
+                    left: 80%;
+                }
+            }
+        }
+        &__aside{
+            flex:2;
+            .title {
+                padding-top: 20px;
+                //padding-bottom: 20px;
+            }
+        }
+    }
+} 
+@media screen and  (min-device-width:897px){
+    .header {
+        &__logo {
+            background-image: url(../images/stampfli_logo_1536x1024_144dpi.jpg);
+            background-position: -80px -140px ;
+            height:$heightHeaderLogoMedium;
+        }
+    }
+} 
+
+@media screen and  (min-device-width:768px) and (orientation:portrait){
+    .header {
+        &__logo {
+            background-image: url(../images/stampfli_logo_1536x1024_144dpi.jpg);
+            background-position: -80px -140px ;
+            height:$heightHeaderLogoMedium;
+        }
+    }
+    .content {
+        flex:2;
+        &__aside {
+            height: auto;
+            .region {
+                background-position-x: -120px;
+            }
+        }
+    }
+    
+}
+
+
+@media screen and  (min-device-width:1024px) and (orientation: portrait){
+    .header {
+        &__logo {
+            background-image: url(../images/stampfli_logo_1536x1024_144dpi.jpg);
+            background-position: -80px -140px ;
+        }
+    }
+    .content {
+        @include getFlex(column,none ,none )
+    }
+    .content__main{
+        position: absolute;
+        padding: 0 40px 0 0;
+        right:0;
+        z-index: 2;;
+        .what {
+            
+            .title {
+                //padding-left: 65px;
+                text-align:right;
+            }
+            #slides{
+                text-align: right;
+               .slide img {
+                    width:80%;
+                    padding:30px 0px 0 80px;
+                } 
+            }
+            .timing, .charge, .service {
+                //padding-left: 185px;
+                //direction: rtl;
+                float: right;
+                text-align:right;
+                
+                
+            }
+            #previous {
+                left: 40%;
+            }
+            #next {
+                left: 89%;
+            }
+        }
+    }
+    .content__aside{
+        position: relative;
+        .region {
+            background-position-x: right;
+        }
+    }
+}
+@media screen and  (min-device-width:1024px) and (orientation:landscape){
+    .header {
+        &__logo {
+            height:130px;
+            background-image: url(../images/stampfli_logo_1536x1024_144dpi.jpg);
+            background-position: -80px -175px ;
+        }
+    }
+    .content{
+        flex:2;
+    }
+    .content__main{
+        flex:2;
+        .what {
+            .title {
+                padding-left: 65px;
+            }
+            #slides{
+               .slide img {
+                    width:80%;
+                    padding:30px 0px 0 80px;
+                } 
+            }
+            .timing, .charge, .service {
+                padding-left: 85px;
+            }
+            #previous {
+                top: 100px;
+                left: 15%;
+            }
+            #next {
+                top: 100px;
+                left: 73%;
+            }
+        }
+    }
+    .content__aside{
+        height: auto;
+        .region {
+            background-position-x: 0;
+        }
+    }
+    .footer {
+        padding: 0;
+        &__short{
+            @include getFlex(row, space-between, center);
+            .impressum{
+                @include getFlex(row, flex-start, center);
+                font-size: 16px;
+            }
+        }
+    }
+}
+@media screen and  (min-device-width:1536px){
+    .header__logo {
+        background-image: url(../images/stampfli_logo_2500x1667_144dpi.jpg);
+        background-size: auto;
+    }
+}
+
+
+
+
+
+
+
+
+
+/*
 .transporte{
     font-family: 'Rubik', sans-serif;
     font-size: 18px;
@@ -95,7 +454,6 @@ body {
                 display: flex;
                 margin: 10px 5px 5px 10px;
                 & > * {
-                    margin: auto 10px auto 4px;
                     color: whitesmoke;
                 }
                 .transporte__icon {
@@ -112,6 +470,9 @@ body {
                     display: none;
                 }
             }
+            .social {
+                display: none;
+            }
         }
         .header__logo {
             background-image: url('../images/stampfli_logo_01_375x190.jpg');
@@ -124,11 +485,15 @@ body {
             left: 18px;
             @include createButton($colorTranporteOrangeLight, $colorTranporteOrange ,$colorTranporteOrange,auto, 50px);
         }
+        .nav {
+            display: none;
+        }
     }
 
     &__navbar {
         display: none;
     }
+    
     &__content {
         margin: 0 $marginTransporteX ;
         color: $colorTranporteBlue;
@@ -196,8 +561,8 @@ body {
             left: 85%;
             transform: rotate(-90deg);
         }  
-    }
-
+    }*/
+/*
     &__footer{
         display:flex;
         flex-direction: column;
@@ -208,42 +573,114 @@ body {
         text-align: center;
         color: $colorTranporteOrange;
         .nav{
-            @include getNav(none);
             font-size: 15px;
             opacity: 80%;
             margin: 23px 0 34px 0;
-
+            list-style: none;
+            padding: 0;
         }
         .social {
             @include getSocial();
         } 
     }
-   
-}
+ */  
 
+ /* 
 @media screen and  (min-device-width:376px) and (orientation : landscape){
     .transporte{
-        &__header{
-            background: url('../images/stampfli_logo_01_812x412.jpg'); 
-            background-position-y: -60px;
+      &__header{  
+            height: 200px;   
+            .header__menu {
+                font-size: 16px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .menu__contact {
+                    margin: auto $marginTransporteX;
+                }
+                .menu__toggle {
+                    display: none;
+                } 
+            }         
+            .header__logo {
+                flex:2;
+                display: inline-block;
+                background: url('../images/stampfli_logo_01_320x162.jpg'); 
+                background-repeat: no-repeat;
+                background-position-y: -5px;
+                background-position-x: 10px;
+                background-size: 55%;
+            }
+            .header__request {
+                top: 20px;
+                left: 560px;
+            }
+            .nav {
+                @include getNav();
+                color: white;
+                display: flex;
+                justify-content: flex-end;
+                //margin-right: 250px;
+                padding-bottom:3px;
+                & > * {
+                   margin-right: $marginTransporteX; 
+                   &:hover {
+                       color: $colorTranporteOrange;
+                   }
+                }
+            }
         }
-        .contact__time {
+        
+        .transporte__content {
             display: flex;
+            justify-content: space-between;
+            margin-right: 0;
+            margin-left: 60px;
+            & > * {
+                margin-top:0;
+            }
+            .title {
+                    margin-top:50px;
+                    margin-bottom:10px;
+            }
+            .region {
+                margin:0 0 0 70px;
+                height: auto;
+                flex:2; 
+            }
+            #previous, #next{
+                    top: 30%;
+                }
+        }*/
+        /*
+        .transporte__footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding:0;
+            height: 50px;
+            .logo {
+                margin-left: 20px;
+                margin-top: 4px;
+            }
+            .nav {
+                display: flex;
+                margin: auto auto;
+                color: whitesmoke;
+                font-size: 16px;
+            }
+            .social{
+                align-items: center;
+                & > * {
+                    padding-top:4px;
+                }
+            }
+
+            
         }
-    
+       
     }
-    .transporte__content {
-        display: flex;
-        justify-content: space-evenly;
-        & > * {
-            flex:2;
-        }
-    }
-    .transporte__footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-}
+} */
 
 

@@ -1,37 +1,72 @@
 @font-face {
-    font-family: 'transporte';
-    src:  url('fonts/transporte.eot?d6aarx');
-    src:  url('fonts/transporte.eot?d6aarx#iefix') format('embedded-opentype'),
-      url('../fonts/transporte.ttf?d6aarx') format('truetype'),
-      url('../fonts/transporte.woff?d6aarx') format('woff'),
-      url('../fonts/transporte.svg?d6aarx#transporte') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
-  }
-  
-  .transporte__icon {
-    /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'transporte' !important;
-    //speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-  
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  .transporte-phone:before {
-    content: "\e942";
-  }
-  .transporte-envelop:before {
-    content: "\e945";
-  }
-  .transporte-alarm:before {
-    content: "\e950";
-  }
-  
+  font-family: 'transporte';
+  src:  url('fonts/transporte.eot?mz6lzj');
+  src:  url('fonts/transporte.eot?mz6lzj#iefix') format('embedded-opentype'),
+    url('../fonts/transporte.ttf?mz6lzj') format('truetype'),
+    url('../fonts/transporte.woff?mz6lzj') format('woff'),
+    url('../fonts/transporte.svg?mz6lzj#transporte') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.fonticon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'transporte' !important;
+  //speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fonticon-home:before {
+  content: "\e900";
+}
+.fonticon-phone:before {
+  content: "\e942";
+}
+.fonticon-envelop:before {
+  content: "\e945";
+}
+.fonticon-location:before {
+  content: "\e947";
+}
+.fonticon-alarm:before {
+  content: "\e950";
+}
+.fonticon-printer:before {
+  content: "\e954";
+}
+.fonticon-search:before {
+  content: "\e986";
+}
+.fonticon-truck:before {
+  content: "\e9b0";
+}
+.fonticon-menu:before {
+  content: "\e9bd";
+}
+.fonticon-earth:before {
+  content: "\e9ca";
+}
+.fonticon-cross:before {
+  content: "\ea0f";
+}
+.fonticon-arrow-up2:before {
+  content: "\ea3a";
+}
+.fonticon-circle-right:before {
+  content: "\ea42";
+}
+.fonticon-facebook2:before {
+  content: "\ea91";
+}
+.fonticon-twitter:before {
+  content: "\ea96";
+}

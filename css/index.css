@@ -228,10 +228,10 @@ html, body, .wrapper {
     .footer__short .social__twitter {
       padding-top: 4px; }
 
-@media screen and (max-device-width: 359px) {
+@media screen and (max-width: 359px) {
   .header__short {
     font-size: 11px; } }
-@media screen and (min-device-width: 415px) {
+@media screen and (min-width: 415px) {
   .header__short {
     font-size: 16px; }
     .header__short .toggle {
@@ -269,12 +269,12 @@ html, body, .wrapper {
       flex: 2; }
       .content__aside .title {
         padding-top: 20px; } }
-@media screen and (min-device-width: 897px) {
+@media screen and (min-width: 897px) {
   .header__logo {
     background-image: url(../images/stampfli_logo_1536x1024_144dpi.jpg);
     background-position: -80px -140px;
     height: 180px; } }
-@media screen and (min-device-width: 768px) and (orientation: portrait) {
+@media screen and (min-width: 768px) and (orientation: portrait) {
   .header__logo {
     background-image: url(../images/stampfli_logo_1536x1024_144dpi.jpg);
     background-position: -80px -140px;
@@ -286,7 +286,7 @@ html, body, .wrapper {
       height: auto; }
       .content__aside .region {
         background-position-x: -120px; } }
-@media screen and (min-device-width: 1024px) and (orientation: portrait) {
+@media screen and (min-width: 1024px) and (orientation: portrait) {
   .header__logo {
     background-image: url(../images/stampfli_logo_1536x1024_144dpi.jpg);
     background-position: -80px -140px; }
@@ -321,7 +321,7 @@ html, body, .wrapper {
     position: relative; }
     .content__aside .region {
       background-position-x: right; } }
-@media screen and (min-device-width: 1024px) and (orientation: landscape) {
+@media screen and (min-width: 1024px) and (orientation: landscape) {
   .header__logo {
     height: 130px;
     background-image: url(../images/stampfli_logo_1536x1024_144dpi.jpg);
@@ -364,7 +364,7 @@ html, body, .wrapper {
         justify-content: flex-start;
         align-items: center;
         font-size: 16px; } }
-@media screen and (min-device-width: 1536px) {
+@media screen and (min-width: 1536px) {
   .header__logo {
     background-image: url(../images/stampfli_logo_2500x1667_144dpi.jpg);
     background-size: auto; } }

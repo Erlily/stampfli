@@ -221,7 +221,7 @@ html, body , .wrapper {
         }
     }
 } 
-@media screen and  (max-device-width:359px) {
+@media screen and  (max-width:359px) {
     .header {
         &__short {
             font-size: 11px;
@@ -229,7 +229,7 @@ html, body , .wrapper {
     }
 }
 
-@media screen and  (min-device-width:415px) {
+@media screen and  (min-width:415px) {
     .header {
         &__short {
             font-size: 16px;
@@ -280,7 +280,7 @@ html, body , .wrapper {
         }
     }
 } 
-@media screen and  (min-device-width:897px){
+@media screen and  (min-width:897px){
     .header {
         &__logo {
             background-image: url(../images/stampfli_logo_1536x1024_144dpi.jpg);
@@ -290,7 +290,7 @@ html, body , .wrapper {
     }
 } 
 
-@media screen and  (min-device-width:768px) and (orientation:portrait){
+@media screen and  (min-width:768px) and (orientation:portrait){
     .header {
         &__logo {
             background-image: url(../images/stampfli_logo_1536x1024_144dpi.jpg);
@@ -311,7 +311,7 @@ html, body , .wrapper {
 }
 
 
-@media screen and  (min-device-width:1024px) and (orientation: portrait){
+@media screen and  (min-width:1024px) and (orientation: portrait){
     .header {
         &__logo {
             background-image: url(../images/stampfli_logo_1536x1024_144dpi.jpg);
@@ -362,7 +362,7 @@ html, body , .wrapper {
         }
     }
 }
-@media screen and  (min-device-width:1024px) and (orientation:landscape){
+@media screen and  (min-width:1024px) and (orientation:landscape){
     .header {
         &__logo {
             height:130px;
@@ -415,7 +415,7 @@ html, body , .wrapper {
         }
     }
 }
-@media screen and  (min-device-width:1536px){
+@media screen and  (min-width:1536px){
     .header__logo {
         background-image: url(../images/stampfli_logo_2500x1667_144dpi.jpg);
         background-size: auto;

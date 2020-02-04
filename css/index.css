@@ -73,7 +73,7 @@ html {
 html, body, .wrapper {
   margin: 0;
   padding: 0;
-  height: 100vh; }
+  height: 100%; }
 
 /*Wrapper*/
 .wrapper {
@@ -108,11 +108,13 @@ html, body, .wrapper {
     .header__short .toggle #toggle {
       display: none; }
 .header__logo {
-  background-image: url(../images/stampfli_logo_415x210_72dpi.jpg);
+  background-image: url(../images/logo_696x144_72dpi.png);
   background-repeat: no-repeat;
-  height: 210px;
+  height: 130px;
   background-size: contain;
-  background-position-x: center; }
+  background-color: #003575;
+  background-position-x: center;
+  background-position-y: center; }
 .header__nav {
   display: none;
   background-color: #d3d7d9;
@@ -231,15 +233,17 @@ html, body, .wrapper {
 @media screen and (max-width: 359px) {
   .header__short {
     font-size: 11px; } }
+@media screen and (min-width: 415px) and (orientation: landscape) {
+  body {
+    height: auto; } }
 @media screen and (min-width: 415px) {
   .header__short {
     font-size: 16px; }
     .header__short .toggle {
       display: none; }
   .header__logo {
-    background-image: url(../images/stampfli_logo_897x598_96dpi.jpg);
-    background-position: -50px -75px;
-    background-size: auto;
+    background-image: url(../images/logo_696x144_72dpi.png);
+    background-size: contain;
     height: 130px; }
   .header__nav {
     display: block; }
@@ -269,27 +273,23 @@ html, body, .wrapper {
       flex: 2; }
       .content__aside .title {
         padding-top: 20px; } }
-@media screen and (min-width: 897px) {
-  .header__logo {
-    background-image: url(../images/stampfli_logo_1536x1024_144dpi.jpg);
-    background-position: -80px -140px;
-    height: 180px; } }
 @media screen and (min-width: 768px) and (orientation: portrait) {
   .header__logo {
-    background-image: url(../images/stampfli_logo_1536x1024_144dpi.jpg);
-    background-position: -80px -140px;
+    background-image: url(../images/logo_696x144_72dpi.png);
     height: 180px; }
 
-  .content {
-    flex: 2; }
-    .content__aside {
-      height: auto; }
-      .content__aside .region {
-        background-position-x: -120px; } }
+  .content__aside .region {
+    background-position-x: -120px; } }
+@media screen and (min-width: 897px) {
+  body {
+    height: 100%; }
+
+  .header__logo {
+    background-image: url(../images/logo_696x144_72dpi.png);
+    height: 180px; } }
 @media screen and (min-width: 1024px) and (orientation: portrait) {
   .header__logo {
-    background-image: url(../images/stampfli_logo_1536x1024_144dpi.jpg);
-    background-position: -80px -140px; }
+    background-image: url(../images/logo_696x144_72dpi.png); }
 
   .content {
     display: flex;
@@ -324,11 +324,11 @@ html, body, .wrapper {
 @media screen and (min-width: 1024px) and (orientation: landscape) {
   .header__logo {
     height: 130px;
-    background-image: url(../images/stampfli_logo_1536x1024_144dpi.jpg);
-    background-position: -80px -175px; }
+    background-image: url(../images/logo_696x144_72dpi.png); }
 
   .content {
-    flex: 2; }
+    flex: 2;
+    height: 700px; }
 
   .content__main {
     flex: 2; }
@@ -366,8 +366,7 @@ html, body, .wrapper {
         font-size: 16px; } }
 @media screen and (min-width: 1536px) {
   .header__logo {
-    background-image: url(../images/stampfli_logo_2500x1667_144dpi.jpg);
-    background-size: auto; } }
+    background-image: url(../images/logo_696x144_72dpi.png); } }
 /*
 .transporte{
     font-family: 'Rubik', sans-serif;

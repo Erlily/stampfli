@@ -50,7 +50,8 @@ html {
 html, body , .wrapper {
     margin:0;
     padding:0;
-    height: 100vh; 
+    //height: 100vh; 
+    height: 100%;
 } 
 /*Wrapper*/
 .wrapper {
@@ -86,11 +87,13 @@ html, body , .wrapper {
         }
     } 
     &__logo {
-        background-image: url(../images/stampfli_logo_415x210_72dpi.jpg);
+        background-image: url(../images/logo_696x144_72dpi.png);
         background-repeat: no-repeat;
-        height: $heightHeaderLogoLarge;
+        height: $heightHeaderLogoSmall;
         background-size: contain;
+        background-color: $colorTranporteBlue;
         background-position-x: center;
+        background-position-y: center;
     }
     &__nav {
         display:none;
@@ -229,6 +232,12 @@ html, body , .wrapper {
     }
 }
 
+@media screen and  (min-width:415px) and (orientation:landscape){
+    body {
+        height: auto;
+    }
+}
+
 @media screen and  (min-width:415px) {
     .header {
         &__short {
@@ -238,9 +247,9 @@ html, body , .wrapper {
             }
         }
         &__logo {
-            background-image: url(../images/stampfli_logo_897x598_96dpi.jpg);
-            background-position: -50px -75px ;
-            background-size: auto;
+            background-image: url(../images/logo_696x144_72dpi.png);
+            //background-position: -50px -75px ;
+            background-size: contain;
             height:$heightHeaderLogoSmall;
         }
         &__nav {
@@ -280,28 +289,19 @@ html, body , .wrapper {
         }
     }
 } 
-@media screen and  (min-width:897px){
-    .header {
-        &__logo {
-            background-image: url(../images/stampfli_logo_1536x1024_144dpi.jpg);
-            background-position: -80px -140px ;
-            height:$heightHeaderLogoMedium;
-        }
-    }
-} 
 
 @media screen and  (min-width:768px) and (orientation:portrait){
     .header {
         &__logo {
-            background-image: url(../images/stampfli_logo_1536x1024_144dpi.jpg);
-            background-position: -80px -140px ;
+            background-image: url(../images/logo_696x144_72dpi.png);
+            //background-position: -80px -140px ;
             height:$heightHeaderLogoMedium;
         }
     }
     .content {
-        flex:2;
+        //flex:2;
         &__aside {
-            height: auto;
+            //height: auto;
             .region {
                 background-position-x: -120px;
             }
@@ -309,13 +309,24 @@ html, body , .wrapper {
     }
     
 }
-
+@media screen and  (min-width:897px){
+    body {
+        height: 100%;
+    }
+    .header {
+        &__logo {
+            background-image: url(../images/logo_696x144_72dpi.png);
+            //background-position: -80px -140px ;
+            height:$heightHeaderLogoMedium;
+        }
+    }
+} 
 
 @media screen and  (min-width:1024px) and (orientation: portrait){
     .header {
         &__logo {
-            background-image: url(../images/stampfli_logo_1536x1024_144dpi.jpg);
-            background-position: -80px -140px ;
+            background-image: url(../images/logo_696x144_72dpi.png);
+            //background-position: -80px -140px ;
         }
     }
     .content {
@@ -362,16 +373,18 @@ html, body , .wrapper {
         }
     }
 }
+
 @media screen and  (min-width:1024px) and (orientation:landscape){
     .header {
         &__logo {
             height:130px;
-            background-image: url(../images/stampfli_logo_1536x1024_144dpi.jpg);
-            background-position: -80px -175px ;
+            background-image: url(../images/logo_696x144_72dpi.png);
+            //background-position: -80px -175px ;
         }
     }
     .content{
         flex:2;
+        height: 700px;
     }
     .content__main{
         flex:2;
@@ -414,11 +427,15 @@ html, body , .wrapper {
             }
         }
     }
+
+
+
+
 }
 @media screen and  (min-width:1536px){
     .header__logo {
-        background-image: url(../images/stampfli_logo_2500x1667_144dpi.jpg);
-        background-size: auto;
+        background-image: url(../images/logo_696x144_72dpi.png);
+        //background-size: auto;
     }
 }
 
